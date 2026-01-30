@@ -1,122 +1,346 @@
-/* Cool Tech-Soft Palette */
+/* --- Unique Design Tokens --- */
 :root {
-    --bg-deep: #0f172a;       /* Deep slate/navy for eye comfort */
-    --bg-surface: #1e293b;    /* Slightly lighter for cards */
-    --accent-cyan: #38bdf8;   /* Soft tech blue */
-    --text-silver: #e2e8f0;   /* Muted white to reduce strain */
-    --text-dim: #94a3b8;      /* Greyed out text for hierarchy */
-    --grid-line: rgba(56, 189, 248, 0.08);
+    --bg-dark: #05070a;
+    --bg-deep-slate: #0f172a;
+    --glass: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --indigo-bright: #6366f1;
+    --indigo-glow: rgba(99, 102, 241, 0.3);
+    --text-main: #e2e8f0;
+    --text-dim: #94a3b8;
+    --terminal-header: rgba(15, 23, 42, 0.9);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- Base Resets --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-deep);
-    color: var(--text-silver);
-    line-height: 1.7;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Space Grotesk', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.6;
 }
 
-/* Digital Grid Background */
-.tech-grid-bg {
-    background-image: 
-        linear-gradient(var(--grid-line) 1px, transparent 1px),
-        linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-    background-size: 60px 60px;
+/* --- Interactive Background --- */
+.bg-animate {
+    background: radial-gradient(circle at 50% 50%, var(--bg-deep-slate) 0%, var(--bg-dark) 100%);
     background-attachment: fixed;
 }
 
-.badge, .logo-name, .code-comment, .status-tag, footer p {
+/* --- Navigation Bar --- */
+header {
+    position: fixed; 
+    top: 20px; 
+    width: 100%; 
+    z-index: 1000;
+    display: flex; 
+    justify-content: center;
+}
+
+.nav-blur {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    padding: 10px 30px;
+    border-radius: 50px;
+    display: flex; 
+    align-items: center; 
+    gap: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.logo { font-weight: 700; font-size: 1.2rem; }
+.dot { color: var(--indigo-bright); }
+
+nav ul { display: flex; list-style: none; gap: 20px; }
+nav a { 
+    text-decoration: none; 
+    color: var(--text-dim); 
+    font-family: 'Fira Code', monospace; 
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+nav a:hover { color: var(--indigo-bright); }
+
+/* --- Hero Section --- */
+.hero { 
+    min-height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    padding: 0 10%; 
+}
+
+.hero-inner { 
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 50px; 
+    align-items: center; 
+}
+
+.status-badge {
+    background: var(--indigo-glow);
+    color: var(--indigo-bright);
+    padding: 5px 15px; 
+    border-radius: 20px;
+    font-size: 0.7rem; 
+    display: inline-block; 
+    margin-bottom: 20px;
+    border: 1px solid var(--indigo-bright);
+}
+
+.glitch { font-size: 4.5rem; line-height: 1; margin-bottom: 20px; font-weight: 700; }
+.text-gradient {
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-desc { font-size: 1.1rem; color: var(--text-dim); max-width: 500px; margin-bottom: 25px; }
+
+/* --- About Highlights --- */
+.about-highlights {
+    margin-bottom: 35px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--text-dim);
+}
+
+.h-item { margin-bottom: 10px; transition: 0.3s; }
+.h-item span { color: var(--indigo-bright); margin-right: 12px; }
+.h-item:hover { color: var(--text-main); transform: translateX(8px); }
+
+/* --- Hero Image & Entrepreneur Badge --- */
+.hero-visual { display: flex; justify-content: center; }
+
+.glass-frame {
+    position: relative;
+    padding: 12px; 
+    background: var(--glass);
+    border: 1px solid var(--glass-border); 
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.profile-img {
+    width: 100%; 
+    height: 500px; 
+    object-fit: cover;
+    border-radius: 15px; 
+    filter: grayscale(20%); 
+    transition: 0.5s;
+    display: block;
+}
+
+.photo-label {
+    position: absolute;
+    bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(99, 102, 241, 0.95);
+    color: #fff;
+    padding: 10px 28px;
+    border-radius: 50px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 25px rgba(99, 102, 241, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    z-index: 10;
+    white-space: nowrap;
+}
+
+.glass-frame:hover .profile-img { filter: grayscale(0%); transform: scale(1.02); }
+.glass-frame:hover .photo-label { transform: translateX(-50%) translateY(-5px); background: var(--indigo-bright); }
+
+/* --- Buttons --- */
+.cta-box { display: flex; align-items: center; gap: 20px; }
+.btn-main {
+    background: var(--indigo-bright); color: #fff;
+    padding: 14px 32px; border-radius: 10px; text-decoration: none;
+    font-weight: 700; box-shadow: 0 10px 20px var(--indigo-glow);
+    transition: 0.3s;
+}
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 15px 30px var(--indigo-glow); background: #4f46e5; }
+.btn-sub { color: var(--text-main); text-decoration: none; font-family: 'Fira Code', monospace; font-size: 0.9rem; }
+.btn-sub:hover { color: var(--indigo-bright); }
+
+/* --- Skills Terminal Section --- */
+.section-padding { padding: 100px 10%; }
+.section-title { font-size: 2.5rem; margin-bottom: 50px; font-family: 'Fira Code', monospace; color: var(--indigo-bright); text-align: center; }
+
+.terminal-box {
+    width: 100%; max-width: 900px; margin: 0 auto;
+    border-radius: 12px; overflow: hidden;
+    background: rgba(5, 7, 10, 0.8);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.terminal-header {
+    background: var(--terminal-header);
+    padding: 14px 20px; display: flex; align-items: center; gap: 10px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.t-dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+.t-user { margin-left: 15px; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: var(--text-dim); }
+
+.terminal-body { padding: 35px; font-family: 'Fira Code', monospace; }
+.t-cmd { color: var(--indigo-bright); }
+
+.skills-grid-new {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 35px; margin-top: 25px;
+}
+
+.skill-category h4 { color: var(--indigo-bright); margin-bottom: 12px; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+.skill-category p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
+
+/* --- Projects Grid --- */
+.grid-layout { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+
+.glass {
+    background: var(--glass); border: 1px solid var(--glass-border);
+    padding: 35px; border-radius: 24px; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.glass:hover {
+    background: rgba(255,255,255,0.06);
+    border-color: var(--indigo-bright);
+    transform: translateY(-12px);
+}
+
+.card-header { display: flex; justify-content: space-between; margin-bottom: 25px; font-size: 1.5rem; }
+.card-header a { text-decoration: none; color: var(--indigo-bright); transition: 0.3s; }
+.card-header a:hover { transform: scale(1.2); }
+
+.project-logo-box {
+    width: 100%; height: 180px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px; margin-bottom: 25px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; border: 1px solid var(--glass-border);
+}
+
+.project-thumb { max-width: 85%; max-height: 80%; object-fit: contain; transition: 0.5s; }
+.glass:hover .project-thumb { transform: scale(1.08); }
+
+.tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.tags span { font-size: 0.7rem; color: var(--indigo-bright); background: var(--indigo-glow); padding: 4px 12px; border-radius: 6px; font-weight: 600; }
+
+/* --- Footer & Heart Animation --- */
+footer { text-align: center; padding: 60px; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--glass-border); margin-top: 50px; }
+.heart { color: #ff4d4d; display: inline-block; animation: pulse 1.5s infinite; }
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+    100% { transform: scale(1); }
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+    .hero-inner { gap: 30px; }
+    .glitch { font-size: 3.5rem; }
+}
+
+@media (max-width: 900px) {
+    .hero { padding-top: 120px; }
+    .hero-inner { grid-template-columns: 1fr; text-align: center; }
+    .hero-desc { margin: 0 auto 25px; }
+    .about-highlights { display: inline-block; text-align: left; }
+    .cta-box { justify-content: center; }
+    .hero-visual { margin-top: 40px; }
+    .profile-img { height: 400px; }
+    .nav-blur { gap: 15px; padding: 10px 20px; width: 90%; }
+}
+
+
+/* --- Contact Terminal Specifics --- */
+.contact-terminal {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    background: rgba(10, 15, 25, 0.6);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.contact-grid {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
     font-family: 'Fira Code', monospace;
 }
 
-/* Header */
-header {
-    background: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(12px);
+.contact-method {
     display: flex;
-    justify-content: space-between;
-    padding: 1.2rem 8%;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
+    flex-direction: column;
+    gap: 8px;
 }
 
-.logo-container { display: flex; align-items: center; gap: 12px; }
-.nav-avatar { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--accent-cyan); object-fit: cover; }
-.logo-name { color: var(--accent-cyan); font-weight: 700; }
-
-nav ul { display: flex; list-style: none; gap: 2.5rem; }
-nav a { text-decoration: none; color: var(--text-silver); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
-nav a:hover { color: var(--accent-cyan); }
-
-/* Hero Area */
-#about { padding: 100px 8%; min-height: 85vh; display: flex; align-items: center; }
-.hero-container { display: flex; align-items: center; gap: 6rem; max-width: 1200px; margin: 0 auto; }
-
-.image-wrapper { position: relative; }
-.tech-accent-frame {
-    position: absolute;
-    top: -15px; left: -15px;
-    width: 100%; height: 100%;
-    border: 3px solid var(--accent-cyan);
-    border-radius: 15px;
-    z-index: -1;
-    opacity: 0.4;
-}
-
-.profile-img-main {
-    width: 420px;
-    height: 550px;
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 0 40px rgba(56, 189, 248, 0.1);
-}
-
-.hero-text h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; color: #fff; }
-.highlight { color: var(--accent-cyan); }
-.badge { color: var(--accent-cyan); font-size: 0.85rem; margin-bottom: 1rem; display: block; }
-.bio { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2.5rem; max-width: 500px; }
-
-/* Buttons */
-.primary-btn {
-    display: inline-block;
-    background: var(--accent-cyan);
-    color: var(--bg-deep);
-    padding: 1rem 2.5rem;
+.contact-link {
+    color: var(--text-main);
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 6px;
+    font-size: 0.95rem;
     transition: 0.3s;
 }
 
-.primary-btn:hover { background: #fff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3); }
-.secondary-btn { margin-left: 1.5rem; color: var(--text-silver); font-weight: 700; text-decoration: none; border-bottom: 2px solid var(--accent-cyan); }
-
-/* Projects Grid */
-.section-padding { padding: 100px 8%; }
-.project-container { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
-.project-card { background: var(--bg-surface); border-radius: 15px; border: 1px solid rgba(255,255,255,0.05); overflow: hidden; transition: 0.4s; }
-.project-card:hover { border-color: var(--accent-cyan); transform: translateY(-10px); }
-
-.project-img-box { height: 280px; overflow: hidden; background: #000; display: flex; align-items: center; justify-content: center; }
-.project-img-box img { max-width: 80%; max-height: 80%; object-fit: contain; transition: 0.5s; }
-
-.project-info { padding: 2.5rem; }
-.text-link { color: var(--accent-cyan); font-weight: 700; text-decoration: none; display: inline-block; margin-top: 1rem; }
-.status-tag { font-size: 0.7rem; background: rgba(255,255,255,0.05); padding: 5px 12px; border-radius: 4px; color: var(--text-dim); }
-
-/* Footer */
-footer { text-align: center; padding: 4rem; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-dim); font-size: 0.85rem; }
-
-@media (max-width: 900px) {
-    .hero-container { flex-direction: column; text-align: center; }
-    .profile-img-main { width: 100%; height: auto; max-width: 350px; }
-    .project-container { grid-template-columns: 1fr; }
+.contact-link:hover {
+    color: var(--indigo-bright);
+    padding-left: 5px;
 }
 
+.contact-status-box {
+    grid-column: span 2;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--glass-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.t-dim { color: var(--text-dim); font-size: 0.8rem; }
+
+.ping-btn {
+    background: transparent;
+    color: var(--indigo-bright);
+    border: 1px solid var(--indigo-bright);
+    padding: 8px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+
+.ping-btn:hover {
+    background: var(--indigo-bright);
+    color: #fff;
+    box-shadow: 0 0 15px var(--indigo-glow);
+}
+
+/* Mobile Fix for Contact Grid */
+@media (max-width: 600px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-status-box { flex-direction: column; gap: 20px; text-align: center; }
+}
 
 
 

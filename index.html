@@ -3,92 +3,149 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shruti Dubey | Portfolio</title>
+    <title>Shruti Dubey | Digital Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<li><a href="landing.html">Landing Page Project</a></li>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 </head>
-<body class="tech-grid-bg">
+<body class="bg-animate">
 
     <header>
-        <div class="logo-container">
-            <img src="myimage.png" alt="Shruti Dubey" class="nav-avatar">
-            <span class="logo-name">&lt;SHRUTI DUBEY /&gt;</span>
+        <div class="nav-blur">
+            <div class="logo">SD <span class="dot">.</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#about">// about</a></li>
+                    <li><a href="#skills">// skills</a></li>
+                    <li><a href="#projects">// projects</a></li>
+                    <li><a href="C:\Codsoft_intern\portfolio\Shruti resume.pdf" class="resume-tag" download>// resume.pdf</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
-    <section id="about">
-        <div class="hero-container">
-            <div class="image-wrapper">
-                <div class="tech-accent-frame"></div>
-                <img src="myimage.png" alt="Shruti Dubey" class="profile-img-main">
-            </div>
-            <div class="hero-text">
-                <span class="badge">// BSc CS Student & Entrepreneur</span>
-                <h1>Building <span class="highlight">Logic</span>,<br>Crafting Creativity.</h1>
-                <p class="bio">
-                    I am Shruti Dubey, a third-year Computer Science student and the founder of <strong>Flameies</strong>. 
-                    I bridge the gap between technical software engineering and aesthetic brand management.
-                </p>
-                <div class="hero-btns">
-                    <a href="#projects" class="primary-btn">View Repository</a>
-                    <a href="https://8080shruti.github.io/flameies-IBM_project/" target="_blank" class="secondary-btn">Flameies.live</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <main class="container">
+        <section id="about" class="hero">
+            <div class="hero-inner">
+                <div class="hero-content">
+                    <div class="status-badge">Available for Internships</div>
+                    <h1 class="glitch">I'm <span class="text-gradient">Shruti Dubey</span></h1>
+                    <p class="hero-desc">
+                        A Final Year <strong>BSc Computer Science</strong> student merging high-level logic with artisanal creativity. 
+                        Founder of <strong>Flameies</strong>.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="h-item"><span>▹</span> 3rd Year BSc CS Student</div>
+                        <div class="h-item"><span>▹</span> Creative Entrepreneur</div>
+                        <div class="h-item"><span>▹</span> Specialized in Web Technologies</div>
+                    </div>
 
-    <section id="projects" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Featured_Deployments</h2>
-            <div class="project-container">
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <img src="flameies_logo.jpg" alt="Flameies Logo">
-                    </div>
-                    <div class="project-info">
-                        <span class="code-comment">/* Business Frontend */</span>
-                        <h3>Flameies E-commerce</h3>
-                        <p>A frontend platform for my handcrafted soy candle business.</p>
-                        <a href="https://8080shruti.github.io/flameies-IBM_project/" target="_blank" class="text-link">Execute Preview →</a>
+                    <div class="cta-box">
+                        <a href="#projects" class="btn-main">View Archive</a>
                     </div>
                 </div>
-                <div class="project-card">
-                    <div class="project-img-box">
-                        <img src="E-cinema_logo.png" alt="E-Cinema Logo">
-                    </div>
-                    <div class="project-info">
-                        <span class="code-comment">/* Final Year Project */</span>
-                        <h3>E-Cinema System</h3>
-                        <p>A movie ticket booking system developed as a BSc CS student.</p>
-                        <span class="status-tag">Status: In_Development</span>
+                <div class="hero-visual">
+                    <div class="glass-frame">
+                        <img src="myimage.png" alt="Shruti Dubey" class="profile-img">
+                        <div class="photo-label">Entrepreneur</div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Connect</h2>
-            <div class="contact-box">
-                <p>Email: <strong>shrutidubey846@gmail.com</strong></p>
-                <p>Phone: <strong>+91 8080229051</strong></p>
+        <section id="skills" class="section-padding">
+            <h2 class="section-title">System_Core_Skills</h2>
+            <div class="terminal-box glass">
+                <div class="terminal-header">
+                    <span class="t-dot red"></span>
+                    <span class="t-dot yellow"></span>
+                    <span class="t-dot green"></span>
+                    <span class="t-user">shruti@admin: ~</span>
+                </div>
+                <div class="terminal-body">
+                    <p><span class="t-cmd">ls</span> tech_stack/</p>
+                    <div class="skills-grid-new">
+                        <div class="skill-category">
+                            <h4>Frontend:</h4>
+                            <p>HTML5, CSS3, JavaScript, Responsive Design</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Development:</h4>
+                            <p>C++, Java, DBMS, Software Engineering</p>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Branding:</h4>
+                            <p>E-commerce Strategy, Content Creation, Flameies Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-padding">
+            <h2 class="section-title">Selected_Works</h2>
+            <div class="grid-layout">
+                
+                <div class="card glass">
+                    <div class="card-header">
+                        <span class="folder-icon">📂</span>
+                        <a href="https://8080shruti.github.io/flameies-IBM_project/" target="_blank">🔗</a>
+                    </div>
+                    <div class="project-logo-box">
+                        <img src="flameies_logo.jpg" alt="Flameies Logo" class="project-thumb">
+                    </div>
+                    <h3>Flameies E-Commerce</h3>
+                    <p>A sophisticated frontend implementation for my handcrafted soy candle business.</p>
+                    <div class="tags"><span>HTML</span> <span>CSS</span> <span>JS</span></div>
+                </div>
+
+                <div class="card glass">
+                    <div class="card-header">
+                        <span class="folder-icon">📂</span>
+                    </div>
+                    <div class="project-logo-box">
+                        <img src="E-cinema_logo.png" alt="E-Cinema Logo" class="project-thumb">
+                    </div>
+                    <h3>E-Cinema System</h3>
+                    <p>Final Year Project: A full-scale movie ticket booking and management platform.</p>
+                    <div class="tags"><span>BSc CS</span> <span>Database</span> <span>Logic</span></div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+<section id="contact" class="section-padding">
+    <h2 class="section-title">Initialize_Connection</h2>
+    <div class="contact-terminal glass">
+        <div class="terminal-header">
+            <span class="t-dot red"></span>
+            <span class="t-dot yellow"></span>
+            <span class="t-dot green"></span>
+            <span class="t-user">shruti@comms: ~</span>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-method">
+                <span class="t-cmd">Email:</span>
+                <a href="mailto:shrutidubey846@gmail.com" class="contact-link">shrutidubey846@gmail.com</a>
+            </div>
+            <div class="contact-method">
+                <span class="t-cmd">Phone:</span>
+                <p class="contact-link">+91 8080229051</p>
+            </div>
+            <div class="contact-method">
+                <span class="t-cmd">Location:</span>
+                <p class="contact-link">Mumbai, MH, India.</p>
+            </div>
+            <div class="contact-status-box">
+                <p class="t-dim">// Status: Actively seeking internships</p>
+                <a href="mailto:shrutidubey846@gmail.com" class="ping-btn">Ping Me</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <footer>
-        <p>console.log("Built with precision by Shruti Dubey @ 2026");</p>
+        <p>Built with <span class="heart">❤</span> & Code by Shruti Dubey @ 2026</p>
     </footer>
 
 </body>
